@@ -3,8 +3,8 @@
     flex-direction: row;
     align-content: center;
     justify-content: center;
-    align-items: flex-start;
-    width: 70%;
+    align-items: flex-end;
+    width: 700px;
     margin: 20px auto;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .detailContainer .detailInfo {
-    padding: 0px 20px;
+    padding: 0px 0 0 20px;
 }
 
 .detailContainer .detailTitle {
@@ -33,4 +33,17 @@
 
 .detailContainer .detailGenre {
     margin-right: 8px;
+}
+
+
+.detailContainer .btnGoSite {
+    text-decoration: none;
+    color: #222;
+    border-radius: 2px;
+    border: 1px solid #222;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    padding: 2px 5px;
+    margin: 10px 0 0;
 }
