@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navigation from "./components/Navigation"
 import Detail from "./routes/Detail";
 import Home from "./routes/Home";
@@ -18,9 +14,7 @@ function App() {
                 <Route path="/" element={<Home />} />
             </Routes>
         </BrowserRouter>
-    ) 
-    
+    )    
 }
-
 
 export default App;

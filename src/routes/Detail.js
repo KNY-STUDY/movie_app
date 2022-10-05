@@ -28,7 +28,6 @@ function Detail () {
         : <MovieDetail
             url={movieInfo.url}
             year={movieInfo.year}
-            rating={movieInfo.rating}
             coverImg={movieInfo.medium_cover_image}
             title={movieInfo.title_long}
             summary={movieInfo.description_full}
