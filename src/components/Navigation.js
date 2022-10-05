@@ -4,7 +4,7 @@ import "./css/Navigation.css"
 function Navigation() {
     return (
         <div className="nav">
-            <Link to="/" className="nav_btn nav_home">Home</Link>
+            <Link to="/" className="nav_btn">Home</Link>
         </div>
     );
 }

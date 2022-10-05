@@ -50,6 +50,7 @@
 
 .movie .genre {
     margin-right: 8px;
+    font-style: italic;
 }
 
 .movie .summary {
