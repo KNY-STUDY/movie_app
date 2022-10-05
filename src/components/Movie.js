@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./css/Movie.css"
 
-function Movie({id, year, rating, coverImg, title, genres, summary}) {
+function Movie({id, year, coverImg, title, genres, summary}) {
     let summaryText = summary;
     let titleText = title;
     if(summaryText.length > 187) {
