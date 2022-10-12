@@ -30,7 +30,7 @@ const Navigation = () => {
                     <Nav className="me-auto">
                     <NavDropdown title="분류" id="basic-nav-dropdown">
                         {sort.map((c) => (
-                            <NavDropdown.Item as={Link} key={c.name} to={c.name === 'date_added' ? '/' : `/${c.name}`}> {c.text} </NavDropdown.Item>
+                            <NavDropdown.Item as={Link} key={c.name} to={c.name === '' ? '/' : `/${c.name}`}> {c.text} </NavDropdown.Item>
                          ))}
                     </NavDropdown>
                     </Nav>
