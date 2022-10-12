@@ -15,15 +15,15 @@ function MovieDetail({url, year, rating, coverImg, title, summary, genres}) {
             <Card.Img  className="coverImg" src={coverImg} alt="cover img"/>
             <Card.Body className="detailInfo">
              <Card.Title className="detailTitle">{title}</Card.Title>
+             <ul className="detailGenres detail">
+                {
+                    genres ? genres.map((g) => (<li className="detailGenre" key={g}>{g}</li>)) : null
+                }
+            </ul>
              <Card.Text>
-                <ul className="detailGenres detail">
-                    {
-                        genres ? genres.map((g) => (<li className="detailGenre" key={g}>{g}</li>)) : null
-                    }
-                </ul>
                 <p className="detailYear detail">{year}</p>
                 <p className="detailRating">{rating}</p>
-                <div className="detailSummary">{summaryText}</div>
+                <p className="detailSummary">{summaryText}</p>
             </Card.Text>
             <Button variant="primary" href={url} target="_blank" rel="noopener noreferrer" >Go To Site</Button>
             </Card.Body>

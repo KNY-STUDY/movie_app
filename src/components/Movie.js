@@ -18,9 +18,7 @@ function Movie({id, year, coverImg, title, genres, summary, rating}) {
             <Card.Img variant="top" src={coverImg} alt="cover img"  />
             <Card.Body>
                 <Card.Title> <Link to={`/movie/${id}`}> {titleText}  </Link></Card.Title>
-                <Card.Text>
-                    {genres ? genres.map((g) => (<div className="genre" key={g}>{g}</div>)) : null}
-                </Card.Text>
+                <div>{genres ? genres.map((g) => (<div className="genre" key={g}>{g}</div>)) : null}</div>
                 <Card.Text> {year} </Card.Text>
                 <Card.Text> {rating} </Card.Text>
                 <Card.Text> {summaryText} </Card.Text>

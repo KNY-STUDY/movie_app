@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import Movie from "../components/Movie";
@@ -7,18 +8,16 @@ import { useParams } from "react-router-dom";
 
 function Home () {
     const [loading, setLoading] = useState(true);
-    const [movies, setMovies] = useState([]);
-    
+    const [movies, setMovies] = useState([]);  
     const params = useParams();
     const sort = params.sort;
-    const query = sort === "/" ? "date_added" : sort;
+    const query = sort === "movie_app" ? "date_added" : sort;
     console.log(sort)
 
     const getMovies = async() => {
-        
         const json = await (
             await fetch (
-              `https://yts.mx/api/v2/list_movies.json?sort_by=${query}`
+              `https://yts.mx/api/v2/list_movies.json?sort_by=${sort}`
             )
         ).json();
         setMovies(json.data.movies);
@@ -27,7 +26,7 @@ function Home () {
 
     useEffect(() => {
         getMovies();
-    }, [query]);   
+    }, [query]);  
 
     
     return (

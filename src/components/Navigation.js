@@ -6,9 +6,12 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import "./css/Navigation.css"
 
 const sort =  [
-    
+    // {
+    //     name: "date_added",      
+    //     text: "전체보기"
+    // },
     {
-        name: "minimum_rating",
+        name: "rating",
         text: "평점순"
     },
     {
