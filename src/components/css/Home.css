@@ -12,4 +12,7 @@
     grid-gap: 100px;
     width: 100%;
     padding-top: 70px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

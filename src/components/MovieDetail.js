@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../components/css/Detail.css"
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import "./css/Detail.css"
 
 
 function MovieDetail({url, year, rating, coverImg, title, summary, genres}) {
@@ -9,22 +11,23 @@ function MovieDetail({url, year, rating, coverImg, title, summary, genres}) {
         summaryText = summaryText.substring(0, 1030) + "...";
     }
     return (
-        <div className='detailContainer'>
-            <div className="imgContainer">
-                <img className="coverImg" src={coverImg} alt="cover img"/>
-            </div>
-            <div className="detailInfo">
-                <h2 className="detailTitle">{title}</h2>
+        <Card className="cardDetail">
+            <Card.Img  className="coverImg" src={coverImg} alt="cover img"/>
+            <Card.Body className="detailInfo">
+             <Card.Title className="detailTitle">{title}</Card.Title>
+             <Card.Text>
                 <ul className="detailGenres detail">
                     {
                         genres ? genres.map((g) => (<li className="detailGenre" key={g}>{g}</li>)) : null
                     }
                 </ul>
                 <p className="detailYear detail">{year}</p>
-                <p className="detailSummary">{summaryText}</p>
-                <a href={url} className="btnGoSite" target="_blank" rel="noopener noreferrer">Go To Site</a>
-            </div>
-        </div>
+                <p className="detailRating">{rating}</p>
+                <div className="detailSummary">{summaryText}</div>
+            </Card.Text>
+            <Button variant="primary" href={url} target="_blank" rel="noopener noreferrer" >Go To Site</Button>
+            </Card.Body>
+        </Card>
     );
 };
 
@@ -35,7 +38,7 @@ MovieDetail.propTypes = {
     summary: PropTypes.string.isRequired,
     genres: PropTypes.arrayOf(PropTypes.string),
     year: PropTypes.number.isRequired,
-    rating: PropTypes.number.isRequired
+    rating: PropTypes.number.isRequired,
 };
 
 export default MovieDetail;

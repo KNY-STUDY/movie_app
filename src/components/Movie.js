@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import "./css/Movie.css"
+import Card from 'react-bootstrap/Card';
 
-function Movie({id, year, coverImg, title, genres, summary}) {
+function Movie({id, year, coverImg, title, genres, summary, rating}) {
     let summaryText = summary;
     let titleText = title;
     if(summaryText.length > 187) {
@@ -13,21 +13,20 @@ function Movie({id, year, coverImg, title, genres, summary}) {
         titleText = titleText.substring(0, 18) + "...";
     }
     return (
-        <Link to={`/movie/${id}`}>
-        <div className="movie">
-            <img src={coverImg} alt="cover img" className="coverImg"/>
-            <div className="infos">
-                <h2 className="title">{titleText}</h2>
-                <ul className="genres info">
-                    {
-                        genres ? genres.map((g) => (<li className="genre" key={g}>{g}</li>)) : null
-                    }
-                </ul>
-                <span className="info year">{year}</span>
-                <span className="summary info">{summaryText}</span>
-            </div>
-        </div>
-        </Link>
+      
+        <Card style={{ width: '50%' }}>
+            <Card.Img variant="top" src={coverImg} alt="cover img"  />
+            <Card.Body>
+                <Card.Title> <Link to={`/movie/${id}`}> {titleText}  </Link></Card.Title>
+                <Card.Text>
+                    {genres ? genres.map((g) => (<div className="genre" key={g}>{g}</div>)) : null}
+                </Card.Text>
+                <Card.Text> {year} </Card.Text>
+                <Card.Text> {rating} </Card.Text>
+                <Card.Text> {summaryText} </Card.Text>
+            </Card.Body>
+        </Card>
+       
     );
 };
 
@@ -35,6 +34,7 @@ Movie.propTypes = {
     year: PropTypes.number.isRequired,
     coverImg: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
     genres: PropTypes.arrayOf(PropTypes.string),
     summary: PropTypes.string.isRequired
 };

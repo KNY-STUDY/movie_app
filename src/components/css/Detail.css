@@ -43,3 +43,18 @@
     padding: 2px 5px;
     margin: 50px 0 0;
 }
+
+
+.cardDetail.card  {
+    display: flex;
+    width: 1000px !important;
+    margin: 100px auto;
+    align-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.detailGenres.detail {
+    padding-left: 0;
+    font-style: italic;
+}
