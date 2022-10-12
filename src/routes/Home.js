@@ -11,13 +11,13 @@ function Home () {
     const [movies, setMovies] = useState([]);  
     const params = useParams();
     const sort = params.sort;
-    const query = sort === "movie_app" ? "date_added" : sort;
+    const query = sort === "movie_app" ? "rating" : sort;
     console.log(sort)
 
     const getMovies = async() => {
         const json = await (
             await fetch (
-              `https://yts.mx/api/v2/list_movies.json?sort_by=${sort}`
+              `https://yts.mx/api/v2/list_movies.json?sort_by=${query}`
             )
         ).json();
         setMovies(json.data.movies);
