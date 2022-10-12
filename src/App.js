@@ -8,11 +8,11 @@ import "./App.css"
 
 function App() {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter>
             <Navigation />
             <Routes>
                 <Route path="/movie/:id" element={<Detail />} />
-                <Route path="/" element={<Home />} />
+                <Route path="/:sort" element={<Home />} />
             </Routes>
         </BrowserRouter>
     )    
